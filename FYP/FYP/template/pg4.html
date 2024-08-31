@@ -1,0 +1,564 @@
+<html>
+ <head>
+  <title>
+   ALERTS!!!
+  </title>
+  <style>
+   * {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    background-color: black;
+    padding: 0px 40px 0px 10px;
+}
+
+.wrapper h1 {
+    float: left;
+}
+
+.nav-area {
+    background-position: 100%;
+    align-content: center;
+    text-align: right;
+    list-style: none;
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.nav-area li {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 2px 40px 2px 40px;
+}
+
+.nav-area li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    font-family: poppins;
+    font-size: 20px;
+    transition: transform .2s;
+}
+
+.nav-area li a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+
+/*----------for algorithm------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dataframe {
+    font-family: sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: #A569BD;
+}
+
+.dataframe th {
+    background-color: #F4D03F;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 8px;
+    text-align: center;
+}
+
+tbody>tr>:nth-child(2) {
+    background-color: red;
+}
+  </style>
+ </head>
+</html>
+<body>
+ <header>
+  <div class="wrapper" id="nav">
+   <div>
+    <h1 style="color :white; background-color: black; padding-top: 10px; padding-bottom: 10px; padding-left:15px;text-align:left">
+     Forest Fire Prediction System
+    </h1>
+   </div>
+  </div>
+ </header>
+</body>
+
+    <div id='table_pd'>
+        <table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Month</th>
+      <th>Day</th>
+      <th>FFMC</th>
+      <th>DMC</th>
+      <th>DC</th>
+      <th>ISI</th>
+      <th>BUI</th>
+      <th>FWI</th>
+      <th>Intensity</th>
+      <th>Fire</th>
+      <th>prediction</th>
+      <th>MESSAGE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>7</td>
+      <td>84.2811</td>
+      <td>102.9756</td>
+      <td>328.0900</td>
+      <td>2</td>
+      <td>115.4008</td>
+      <td>10.8432</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>8</td>
+      <td>87.0790</td>
+      <td>105.3053</td>
+      <td>333.2353</td>
+      <td>3</td>
+      <td>117.6581</td>
+      <td>14.6005</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6</td>
+      <td>15</td>
+      <td>81.5684</td>
+      <td>246.9290</td>
+      <td>955.1529</td>
+      <td>2</td>
+      <td>299.9792</td>
+      <td>10.0946</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>16</td>
+      <td>81.6672</td>
+      <td>250.8694</td>
+      <td>963.5069</td>
+      <td>2</td>
+      <td>303.9132</td>
+      <td>10.1254</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>20</td>
+      <td>81.4552</td>
+      <td>265.6827</td>
+      <td>996.4031</td>
+      <td>1</td>
+      <td>318.8312</td>
+      <td>10.0574</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>21</td>
+      <td>82.5606</td>
+      <td>269.9586</td>
+      <td>1004.7796</td>
+      <td>2</td>
+      <td>322.9776</td>
+      <td>11.0036</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>17</td>
+      <td>82.9630</td>
+      <td>276.6859</td>
+      <td>1021.2639</td>
+      <td>2</td>
+      <td>329.9157</td>
+      <td>11.7982</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>18</td>
+      <td>84.4632</td>
+      <td>280.2933</td>
+      <td>1029.3784</td>
+      <td>2</td>
+      <td>333.5367</td>
+      <td>14.0517</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>19</td>
+      <td>84.7927</td>
+      <td>283.8884</td>
+      <td>1037.4051</td>
+      <td>2</td>
+      <td>337.1334</td>
+      <td>14.7170</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>8</td>
+      <td>20</td>
+      <td>84.8124</td>
+      <td>287.5883</td>
+      <td>1045.6404</td>
+      <td>2</td>
+      <td>340.8274</td>
+      <td>14.1846</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>21</td>
+      <td>82.7168</td>
+      <td>290.7494</td>
+      <td>1053.7129</td>
+      <td>2</td>
+      <td>344.1185</td>
+      <td>11.3174</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>8</td>
+      <td>23</td>
+      <td>82.4432</td>
+      <td>297.0631</td>
+      <td>1069.4941</td>
+      <td>2</td>
+      <td>350.6409</td>
+      <td>11.0360</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>8</td>
+      <td>24</td>
+      <td>85.8137</td>
+      <td>300.9902</td>
+      <td>1077.7459</td>
+      <td>3</td>
+      <td>354.4827</td>
+      <td>16.5998</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>8</td>
+      <td>25</td>
+      <td>86.6964</td>
+      <td>305.0202</td>
+      <td>1085.8926</td>
+      <td>3</td>
+      <td>358.3764</td>
+      <td>18.1993</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>WILD FIRE ALERT !!!</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>8</td>
+      <td>26</td>
+      <td>87.3391</td>
+      <td>309.2394</td>
+      <td>1094.1151</td>
+      <td>3</td>
+      <td>362.4047</td>
+      <td>19.1605</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>WILD FIRE ALERT !!!</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>8</td>
+      <td>27</td>
+      <td>85.3700</td>
+      <td>312.8820</td>
+      <td>1102.2626</td>
+      <td>3</td>
+      <td>366.0218</td>
+      <td>15.5102</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>8</td>
+      <td>28</td>
+      <td>84.4776</td>
+      <td>316.3579</td>
+      <td>1110.3014</td>
+      <td>2</td>
+      <td>369.5070</td>
+      <td>14.1936</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>8</td>
+      <td>29</td>
+      <td>83.9575</td>
+      <td>319.8128</td>
+      <td>1118.2936</td>
+      <td>2</td>
+      <td>372.9689</td>
+      <td>13.1124</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>8</td>
+      <td>30</td>
+      <td>85.0723</td>
+      <td>323.5736</td>
+      <td>1126.4824</td>
+      <td>2</td>
+      <td>376.6631</td>
+      <td>14.8218</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>8</td>
+      <td>31</td>
+      <td>83.5022</td>
+      <td>326.7759</td>
+      <td>1134.6194</td>
+      <td>2</td>
+      <td>379.9693</td>
+      <td>12.8893</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>9</td>
+      <td>1</td>
+      <td>83.7433</td>
+      <td>329.6694</td>
+      <td>1141.4444</td>
+      <td>2</td>
+      <td>382.8814</td>
+      <td>13.1786</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>9</td>
+      <td>2</td>
+      <td>84.3980</td>
+      <td>332.6748</td>
+      <td>1148.1704</td>
+      <td>2</td>
+      <td>385.8534</td>
+      <td>14.3304</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>9</td>
+      <td>3</td>
+      <td>84.6720</td>
+      <td>335.7695</td>
+      <td>1154.9646</td>
+      <td>2</td>
+      <td>388.8930</td>
+      <td>14.4173</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>9</td>
+      <td>4</td>
+      <td>83.9512</td>
+      <td>338.7240</td>
+      <td>1161.6959</td>
+      <td>2</td>
+      <td>391.8279</td>
+      <td>13.1718</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>9</td>
+      <td>5</td>
+      <td>84.5950</td>
+      <td>341.8358</td>
+      <td>1168.5494</td>
+      <td>2</td>
+      <td>394.8834</td>
+      <td>14.1976</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>9</td>
+      <td>6</td>
+      <td>85.8597</td>
+      <td>345.2208</td>
+      <td>1175.4734</td>
+      <td>3</td>
+      <td>398.1288</td>
+      <td>16.2353</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>9</td>
+      <td>7</td>
+      <td>86.9050</td>
+      <td>348.7705</td>
+      <td>1182.4971</td>
+      <td>3</td>
+      <td>401.4948</td>
+      <td>18.4386</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>WILD FIRE ALERT !!!</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>9</td>
+      <td>8</td>
+      <td>86.5188</td>
+      <td>352.2362</td>
+      <td>1189.5066</td>
+      <td>3</td>
+      <td>404.7996</td>
+      <td>17.3474</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>WILD FIRE ALERT !!!</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>9</td>
+      <td>9</td>
+      <td>86.3915</td>
+      <td>355.7166</td>
+      <td>1196.3241</td>
+      <td>3</td>
+      <td>408.0832</td>
+      <td>16.8980</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>SMALL FIRE ALERT !</td>
+    </tr>
+  </tbody>
+</table>
+    </div>   
+    

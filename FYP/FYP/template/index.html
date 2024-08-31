@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forest_fire_predictor</title>
+</head>
+<link rel="stylesheet" href="{% static 'FYP.css' %}">
+<body style="background-image: url({% static 'wall.jpg' %}); background-size:100%;
+            background-repeat: y-repeat;">
+
+<header>
+<div class="wrapper" id="nav">
+	<div><h1 style="color :white; background-color: black; padding-top: 10px; padding-bottom: 10px; padding-left:15px;text-align:left">Forest Fire Prediction System</h1>
+	<ul class="nav-area">
+				
+				<li><a href="{% url 'predictor' %}">PREDICTOR</a></li>&nbsp;
+				<li><a href="{% url 'alert' %}">ALERTS</a></li>&nbsp;
+				<li><a href="{% url 'prediction' %}">INTENSITY</a></li>&nbsp;
+				<li><a href="{% url 'validation' %}">VALIDATION</a></li>&nbsp;
+
+			
+		</ul><div>
+<div>
+</header>
+
+<div class="filechoose" style="background: black; opacity: 0.8; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); border-radius: 30px; margin-left: 500px; width: 450px; height: 150px;">
+	<form action='/external/' enctype="multipart/form-data" method="post" enctype="multipart/form-data" style="color: white; margin-top: 50px; margin-left: 50px; padding-top: 30px;">
+	  <label for="myfile" style="font-size: 20px; ">Select a file: &nbsp; </label>
+	  {% csrf_token %}{{ form.as_p }}
+	  
+	  <input type="file" id="myfile" name="myfile" ><br><br>
+	
+	  {{Accuracy}}
+	  <input type="submit" style="border: 1px solid black; border-radius: 10px; padding: 10px 20px 10px 20px; margin-left: 140px; margin-top: 10px; font-weight: bold;">
+	</form>
+</div>
+<div style="margin-top: 50px; padding-top: 10px; border: 2px 2px 2px 2px; border-style: solid;border-color:#6B8E23; background-color: black;">	
+			<h2 style="font-size: 40px;margin-left: 650px;color: white; ">ALGORITHMS</h2>
+		</div>
+
+		
+		<!--each package-->
+		<div class="row">
+	  		
+
+	  		<div class="column" onclick="openTab('b2');" style="background: black; opacity: 0.8; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); border-radius: 30px; height: 315px;">
+	    		<img src="{% static 'svm.gif' %}" style="border-radius: 25px; width: 60%; height: 75%; margin-top: -5px;">
+	    		<h2 style="color: white; font-size: 25px; font-style: italic; opacity: 1;"><b>LINEAR SVM</b></h2> <br>
+	  		</div>
+
+	  		<div class="column" onclick="openTab('b3');" style="background: black; opacity: 0.8; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); border-radius: 30px;height: 317px;">
+	    		<img src="{% static 'ksvm.gif' %}" style="border-radius: 25px; width: 50%; height: 70%; margin-top: 5px;">
+	    		<h2 style="color: white; font-size: 25px; font-style: italic; opacity: 1;"><b>PARALLEL SVM</b></h2> <br>
+	  		</div>
+		</div>
+
+		<!-- extra pop up for each algo -->
+
+
+		<div id="b2" class="containerTab" style="display:none;background:black; opacity: 0.8;">
+		  	<span onclick="this.parentElement.style.display='none'" class="closebtn" style="cursor: pointer;">&times;</span>
+		  	<div style="margin-top: 10px;"><center style="color: white; font-size: 15px; font-style: italic; ">Accuracy of Linear SVM: {{Accuracy_LSVM}} <br>
+			  Precision of Linear SVM: {{Precision_LSVM}} <br>
+			  Recall of Linear SVM: {{Recall_LSVM}} <br>
+			  Excecution time taken by Linear SVM: {{Time_LSVM}} <br>
+			  </center>
+	  	
+		</div>
+		</div>
+
+		<div id="b3" class="containerTab" style="display:none;background:black; opacity: 0.8;">
+		  	<span onclick="this.parentElement.style.display='none'" class="closebtn" style="cursor: pointer;">&times;</span>
+		  	<div style="margin-top: 10px;"><center style="color: white; font-size: 15px; font-style: italic; "> Accuracy of Parallel SVM: {{Accuracy_PSVM}}<br>
+			  Precision of Parallel SVM: {{Precision_PSVM}} <br>
+			  Recall of Parallel SVM: {{Recall_PSVM}} <br>
+			  Excecution time taken by Parallel SVM: {{Time_PSVM}} <br>
+</center></div>
+		  	
+		</div>
+
+		
+		<script>
+		function openTab(tabName) {
+			var i, x;
+			x = document.getElementsByClassName("containerTab");
+			for (i = 0; i < x.length; i++) {
+			  x[i].style.display = "none";
+			}
+			document.getElementById(tabName).style.display = "block";
+		}
+		</script>
+		<!--<div style="margin-top: 100px;">
+			<p></p>
+		</div>-->
+</body>
+</html>

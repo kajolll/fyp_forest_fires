@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    background-color: black;
+    padding: 0px 40px 0px 10px;
+}
+
+.wrapper h1 {
+    float: left;
+}
+
+.nav-area {
+    background-position: 100%;
+    align-content: center;
+    text-align: right;
+    list-style: none;
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.nav-area li {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 2px 40px 2px 40px;
+}
+
+.nav-area li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    font-family: poppins;
+    font-size: 20px;
+    transition: transform .2s;
+}
+
+.nav-area li a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+
+/*----------for algorithm------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dataframe {
+    font-family: sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: #A569BD;
+}
+
+.dataframe th {
+    background-color: #F4D03F;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 8px;
+    text-align: center;
+}
+
+tbody>tr>:nth-child(2) {
+    background-color: red;
+}
